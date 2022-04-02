@@ -14,4 +14,4 @@ Does your file keep getting blocked during file transfer? Is it impossible to in
 
 Improve Performance
 
-1. Flipping each bit at a time is not very efficient. To enhance performance use the [ByteFlipper](https://github.com/TheEliteOneShot/ps_byte_flipper). 
+1. Flipping each bit at a time is not very efficient. For enhanced performance use the [ByteFlipper](https://github.com/TheEliteOneShot/ps_byte_flipper). 
