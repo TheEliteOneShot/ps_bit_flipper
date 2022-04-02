@@ -8,6 +8,7 @@ Does your file keep getting blocked during file transfer? Is it impossible to in
 4. Transfer the file through and see if it bypasses security limitations.
 5. Run this script again exactly the same way on the other side of the file transfer to unflip the bit thereby showing the real file contents.
 6. Remove the .txt extension on the end of the file name.
+7. Now use the file and see if it works!
 
 # TODO:
 
