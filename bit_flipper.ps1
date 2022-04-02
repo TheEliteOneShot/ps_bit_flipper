@@ -1,26 +1,31 @@
-#Manually flip every 8th bit inside of a file. Run it again to unflip the file.
+# Manually flip every 8th bit inside of a file. Run it again to unflip the file.
 
-$SourceFile = "./file.zip.txt"
+$SourceFile = "./test.txt"
 Get-FileHash $SourceFile | Format-List
-$FileSize = (Get-Item $SourceFile).length
+$FileSize = (Get-Item $SourceFile).Length
 $SourceBytes = [System.IO.File]::ReadAllBytes($SourceFile)
+
+# The bits will be in reverse order
 $BitArray = [System.Collections.BitArray]($SourceBytes)
 
 $bitIndex = 0
-for($i=0;$i -le $BitArray.Length;$i++)
+# Flip the first bit in each byte which will translate to the last bit in each byte being flipped (because order is reversed)
+for($i=0;$i -lt $BitArray.Length;$i++)
 {
-    $perc = [math]::Round(($i / ($BitArray.Length - 1) * 100) * 100,2)
-    Write-Progress -Activity "Flipping every 8th bit inside $SourceFile" -Status 'Progress' -PercentComplete $perc
-    $bitIndex++
-    if ($bitIndex -eq 8) {
-        if($BitArray.Get($i) -eq "True") {
-            $BitArray.Set($i, 0)
-        } else {
-            $BitArray.Set($i, 1)
-        }
-        $bitIndex = 0
+    if ($bitIndex -eq 0) {
+        # If the bit is 0 then set it to 1, else set it to 0
+        Write-Host "flipping" $i
+        $BitArray.Set($i, $(if ($BitArray.Get($i) -eq 1) { 0 } else { 1 }))
+        # Start the bit index at 8 because it gets decremented immediately after
+        $bitIndex = 8
     }
+    $bitIndex--
 }
+
+# Create a new Byte Array that is the size of the file
 $ByteArray = New-Object Byte[] $FileSize
-$BitArray.Copyto($ByteArray,0)
+# Copy the array of bits to the ByteArray
+$BitArray.CopyTo($ByteArray,0)
+
+# Write the new contents to the file
 [System.IO.File]::WriteAllBytes($SourceFile , $ByteArray)
