@@ -13,7 +13,7 @@ $SourceBytes = [System.IO.File]::ReadAllBytes($SourceFile)
 $BitArray = [System.Collections.BitArray]($SourceBytes)
 
 $bitIndex = 0
-# Flip the first bit in each byte which will translate to the last bit in each byte being flipped (because order is reversed)
+# Iterate over each bit and flip the first bit every 8 bits. This will result in the last bit in each byte being flipped (because order is reversed)
 Write-Host "Now flipping every 8th bit in" $BitArray.Length "bits. Please wait..."
 for($i=0;$i -lt $BitArray.Length;$i++)
 {
