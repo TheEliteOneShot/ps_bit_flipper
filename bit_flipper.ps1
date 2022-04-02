@@ -1,6 +1,6 @@
 # Manually flip every 8th bit inside of a file. Run it again to unflip the file.
 
-$SourceFile = "./test.txt"
+$SourceFile = "./boxicons.eot.txt"
 Get-FileHash $SourceFile | Format-List
 $FileSize = (Get-Item $SourceFile).Length
 $SourceBytes = [System.IO.File]::ReadAllBytes($SourceFile)
@@ -12,9 +12,10 @@ $bitIndex = 0
 # Flip the first bit in each byte which will translate to the last bit in each byte being flipped (because order is reversed)
 for($i=0;$i -lt $BitArray.Length;$i++)
 {
+    $perc = ($i / $BitArray.Length) * 100
+    Write-Progress -Activity "Flipping the end bit of each byte..." -Status "Processing" -PercentComplete $perc
     if ($bitIndex -eq 0) {
         # If the bit is 0 then set it to 1, else set it to 0
-        Write-Host "flipping" $i
         $BitArray.Set($i, $(if ($BitArray.Get($i) -eq 1) { 0 } else { 1 }))
         # Start the bit index at 8 because it gets decremented immediately after
         $bitIndex = 8
