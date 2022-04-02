@@ -10,8 +10,8 @@ Does your file keep getting blocked during file transfer? Is it impossible to in
 6. Remove the .txt extension on the end of the file name.
 7. Now use the file and see if it works!
 
-# TODO:
+# Performance:
 
 Improve Performance
 
-1. Instead of processing every bit one at a time, find a way to create a bit mask and do one gigantic -bxor operation. This should greatly improve the performance of the bit flipping operation.
+1. Flipping each bit at a time is not very efficient. To enhance performance, use the ByteFlipper. 
