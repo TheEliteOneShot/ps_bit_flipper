@@ -10,8 +10,6 @@ Does your file keep getting blocked during file transfer? Is it impossible to in
 6. Remove the .txt extension on the end of the file name.
 7. Now use the file and see if it works!
 
-# Performance:
-
-Improve Performance
+# Improve Performance:
 
 1. Flipping each bit at a time is not very efficient. For enhanced performance use the [ByteFlipper](https://github.com/TheEliteOneShot/ps_byte_flipper). 
