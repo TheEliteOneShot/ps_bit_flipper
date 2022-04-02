@@ -1,6 +1,7 @@
-# Manually flip every 8th bit inside of a file. Run it again to unflip the file.
+# Description:
+# Manually flips every 8th bit inside of a file. Run it again to reverse the process.
 
-$SourceFile = "./boxicons.eot.txt"
+$SourceFile = "./test.txt"
 Get-FileHash $SourceFile | Format-List
 $FileSize = (Get-Item $SourceFile).Length
 $SourceBytes = [System.IO.File]::ReadAllBytes($SourceFile)
