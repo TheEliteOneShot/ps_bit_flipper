@@ -1,5 +1,5 @@
 # Introduction
-Does your file keep getting blocked during file transfer? Is it impossible to install new software but Powershell scripting is available? Introducing the powershell bit flipper: the last resort for attempting to bypass useless security protocols. 
+Does your file keep getting blocked during file transfer? Is it impossible to install new software but Powershell scripting is available? Introducing the powershell BitFlipper: the last resort for attempting to bypass useless security protocols. 
 
 # Powershell Bit Flipper
 1. Add .txt extension to any filename, thereby making it text. 
