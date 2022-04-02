@@ -1,5 +1,5 @@
 # Description:
-# Manually flips every 8th bit inside of a file. Run it again to reverse the process.
+# Iterates over every single bit in the file and flips every 8th bit. Run it again to reverse the process.
 
 $SourceFile = "./test.txt"
 Get-FileHash $SourceFile | Format-List
