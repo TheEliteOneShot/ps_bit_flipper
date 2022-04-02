@@ -6,7 +6,7 @@ Does your file keep getting blocked during file transfer? Is it impossible to in
 2. Put this script inside that same directory and set the $SourceFile to that file name.
 3. Run the script and wait for it to process.
 4. Transfer the file through and see if it bypasses security limitations.
-5. Run this script again exactly the same way to unflip the bit thereby showing the real file contents.
+5. Run this script again exactly the same way on the other side of the file transfer to unflip the bit thereby showing the real file contents.
 6. Remove the .txt extension on the end of the file name.
 
 # TODO:
