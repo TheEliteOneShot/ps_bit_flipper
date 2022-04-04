@@ -1,3 +1,6 @@
+# Best solution for sending files as text
+The best way to send files is now called the [FileByter](https://github.com/TheEliteOneShot/FileByter).
+
 # Introduction
 Does your file keep getting blocked during file transfer? Is it impossible to install new software but Powershell scripting is available? Introducing the powershell BitFlipper: the last resort for attempting to bypass useless security protocols. 
 
